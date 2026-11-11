@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
         _moveInput = _moveAction.ReadValue<Vector2>();
 
         Gravity();
@@ -161,6 +161,7 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+        
         _animator.SetTrigger("Die");
     
     }
