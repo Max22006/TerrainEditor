@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
 
     private Transform _cameraTransform;
 
+    private bool isDeath = false;
+
     void Awake()
     {
         _characterController = GetComponent<CharacterController>();
@@ -151,5 +153,15 @@ public class PlayerController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(_sensorTransform.position, _sensorRadius);
+    }
+
+    public void Die()
+    {
+        if (isDeath)
+        {
+            return;
+        }
+        _animator.SetTrigger("Die");
+    
     }
 }
